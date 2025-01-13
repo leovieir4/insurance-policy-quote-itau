@@ -1,0 +1,85 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+ext {
+	set('springCloudVersion', "2022.0.0")
+}
+
+dependencies {
+	// ----- Core Dependencies -----
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j'
+	implementation 'org.modelmapper:modelmapper:2.4.5'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0'
+
+	// ----- AWS SDK -----
+	implementation platform('com.amazonaws:aws-java-sdk-bom:1.12.780')
+	implementation 'com.amazonaws:aws-java-sdk-dynamodb'
+	implementation 'software.amazon.awssdk:secretsmanager:2.20.+'
+	implementation 'com.amazonaws:aws-java-sdk-sqs:1.12.780'
+
+	implementation 'io.awspring.cloud:spring-cloud-aws-sqs:3.3.0-RC1'
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging:2.2.6.RELEASE'
+
+	// ----- Spring Messaging and Retry -----
+	implementation 'org.springframework:spring-messaging:6.2.1'
+	implementation 'org.springframework.retry:spring-retry:2.0.11'
+
+	// ----- Jackson -----
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+	// ----- AWS SDK (Enhanced & CloudWatch) -----
+	implementation platform('software.amazon.awssdk:bom:2.17.293')
+	implementation 'software.amazon.awssdk:cloudwatchlogs'
+
+	// ----- Logging -----
+	implementation 'ch.qos.logback:logback-classic:1.4.5' // ou versão mais recente
+	implementation 'net.logstash.logback:logstash-logback-encoder:7.2'
+	implementation 'io.micrometer:micrometer-registry-cloudwatch:1.10.3'
+
+	// ----- Lombok -----
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// ----- Database -----
+	runtimeOnly 'com.h2database:h2'
+
+	// ----- Test Dependencies -----
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// ----- AWS SDK DynamoDB Enhanced -----
+	implementation 'software.amazon.awssdk:dynamodb-enhanced:2.29.50'
+
+	// ----- Testcontainers (comum e LocalStack) -----
+	testImplementation 'org.testcontainers:testcontainers:1.20.4' // Certifique-se de que é a versão mais recente
+	testImplementation 'org.testcontainers:localstack:1.17.6' // Use a versão mais recente
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,7 @@
+# application-test.yml
+aws:
+  dynamodb:
+    endpoint: http://${localstackContainer.getHost()}:${localstackContainer.getFirstMappedPort()}
+    region: us-east-1 # Região do LocalStack
+    accessKey: test
+    secretKey: test

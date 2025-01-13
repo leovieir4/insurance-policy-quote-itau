@@ -1,0 +1,27 @@
+api:
+  integration:
+    catalog:
+      host: https://products-it.free.beeceptor.com
+      services:
+        getProducts: /products
+        getOffers: /offers
+
+aws:
+  credentials:
+    accessKeyLocal: ACESS_KEY
+    secretKeyLocal: SECRET_KEY
+  dynamodb:
+    endpoint: dynamodb.us-east-2.amazonaws.com
+    region: us-east-2
+    secretArn: arn:aws:secretsmanager:us-east-2:339712897027:secret:userServiceDynamoDB-XWiqtf
+  sqs:
+    region: us-east-2
+    queues:
+      insurenceQuoteReceived:
+        url: https://sqs.us-east-2.amazonaws.com/339712897027/insurence-quote-received.fifo
+        group: quote
+        name: insurence-quote-received.fifo
+      insurenceQuoteCreated:
+        url: https://sqs.us-east-2.amazonaws.com/339712897027/insurance-policy-created
+        group: quote
+        name: insurance-policy-created

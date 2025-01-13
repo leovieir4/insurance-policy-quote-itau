@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pedidosml-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: insurance-itau
+  template:
+    metadata:
+      labels:
+        app: insurance-itau
+    spec:
+      containers:
+        - name: insurance-itau
+          image: leodocker01/insurance-itau:latest # Sua imagem Docker
+          ports:
+            - containerPort: 8080
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: secret
