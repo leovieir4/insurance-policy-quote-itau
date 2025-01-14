@@ -137,8 +137,10 @@ Para simular os serviços da AWS (como **DynamoDB**, **SQS** e outros), utilizam
 Para executar os testes localmente, basta executar o seguinte comando no diretório do projeto:
 
 
-# Para rodar todos os testes
+# Para executar todos os testes
 **`./gradlew test`**
+
+Obs: para executar os testes de integração o docker deve estar ativo
 
 
 ## Diagramas C4 Model 📈
@@ -158,9 +160,7 @@ Para executar os testes localmente, basta executar o seguinte comando no diretó
 
 
 ## Endpoints da API 🌐
-```bash
 
-```
 * `POST /insurance-policies`: Criar cotação.
   * Request Body:
     ```json
@@ -200,8 +200,8 @@ Para executar os testes localmente, basta executar o seguinte comando no diretó
   * Path Variables:
     * `id`: ID da cotação.
   * Response Codes:
-    * `200 OK`: Pedido encontrado com sucesso.
-    * `404 Not Found`: Pedido não encontrado.
+    * `200 OK`: Cotação encontrado com sucesso.
+    * `404 Not Found`: Cotação não encontrado.
     * `500 Internal Server Error`: Erro interno do servidor.
 
 ## Exemplo de Uso ⌨️
