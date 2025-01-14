@@ -44,7 +44,7 @@ A aplicação foi projetada para ser executada na nuvem AWS ☁️ e utiliza ser
 
 ## Instalação 🔧
 
-1. Clone o repositório: `git clone https://github.com/leovieir4/insurance-policy-itau`
+1. Clone o repositório: `git clone https://github.com/leovieir4/insurance-policy-quote-itau`
 2. Navegue até o diretório do projeto: `cd insurance-policy-itau`
 
 ## 🚀 Deploy na AWS:
