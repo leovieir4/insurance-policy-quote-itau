@@ -1,4 +1,4 @@
-package validators;
+package itau.cotacao.seguro.validators;
 import itau.cotacao.seguro.domain.model.InsurancePolicy;
 import itau.cotacao.seguro.exceptions.InvalidTotalCoverageAmountException;
 

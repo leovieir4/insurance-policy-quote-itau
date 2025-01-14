@@ -1,4 +1,4 @@
-package validators;
+package itau.cotacao.seguro.validators;
 
 
 import itau.cotacao.seguro.api.catalog.ProductResponse;
