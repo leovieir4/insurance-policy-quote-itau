@@ -45,7 +45,7 @@ A aplicação foi projetada para ser executada na nuvem AWS ☁️ e utiliza ser
 ## Instalação 🔧
 
 1. Clone o repositório: `git clone https://github.com/leovieir4/insurance-policy-quote-itau`
-2. Navegue até o diretório do projeto: `cd insurance-policy-itau`
+2. Navegue até o diretório do projeto: `cd insurance-policy-quote-itau`
 
 ## 🚀 Deploy na AWS:
 [Link da API](http://13.59.156.55)
@@ -54,8 +54,8 @@ A aplicação foi projetada para ser executada na nuvem AWS ☁️ e utiliza ser
 
 ### Localmente com Docker
 
-1. Construa a imagem Docker: `docker build -t insurance-policy-itau .`
-2. Execute o container Docker: `docker run -p 8080:8080 insurance-policy-itau`
+1. Construa a imagem Docker: `docker build -t insurance-policy-quote-itau .`
+2. Execute o container Docker: `docker run -p 8080:8080 insurance-policy-quote-itau`
 3. A API estará disponível em: `http://localhost:8080` (ou em outra porta que você tenha configurado)
 4. A documentação da API estará disponível em: `http://localhost:8080/swagger-ui/index.html`
 
