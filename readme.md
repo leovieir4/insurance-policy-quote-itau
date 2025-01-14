@@ -154,7 +154,7 @@ Obs: para executar os testes de integração o docker deve estar ativo
 
   ![Consultar cotação](https://i.ibb.co/X41TtmP/Captura-de-tela-2025-01-13-194859.png)
 
-* **Atualizar contação:**
+* **Atualizar cotação:**
 
   ![Atualizar contação](https://i.ibb.co/G2gd7vx/Captura-de-tela-2025-01-13-200115.png)
 
